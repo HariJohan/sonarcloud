@@ -13,7 +13,7 @@ jobs:
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         env:
-          GITHUB_TOKEN: ${{ secrets.HARIGIT }}   
+          GITHUB_TOKEN: ${{ secrets.HARIGIT}}   
           SONAR_TOKEN: ${{ secrets.HARISONAR}}  
         with:
           args: >
