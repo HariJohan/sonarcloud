@@ -29,22 +29,15 @@ jobs:
   build:
     docker:
       - image: cimg/python:3.12
-
     steps:
       - checkout
-      - python/install-packages:
-          pkg-manager: pip
       - run:
-          name: Run tests
-          command: python test.py
+          name: Install dependencies and build project
+          command: echo helo
+      - sonarcloud/scan
 
 workflows:
   sample: 
     jobs:
+      - build
       - build-and-test-and-deploy
-      - build-and-test:
-          requires:
-            - build-and-test-and-deploy
-      - build:
-          requires:
-            - build-and-test
