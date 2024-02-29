@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   python: circleci/python@2.1.1
+  sonarcloud: sonarsource/sonarcloud@2.0.0
 
 jobs:
   build-and-test-and-deploy:
@@ -35,8 +36,7 @@ jobs:
           name: Install dependencies and build project
           command: echo helo
       - sonarcloud/scan
-orbs:
-  sonarcloud: sonarsource/sonarcloud@2.0.0
+
   
 
 workflows:
