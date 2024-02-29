@@ -39,5 +39,6 @@ jobs:
 workflows:
   sample: 
     jobs:
-      - build
+      - build:
+          context:  SonarCloud
       - build-and-test-and-deploy
